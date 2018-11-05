@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{# Display a list #}
+{% block content %}
+<div class='container-fluid'>
+<div class="row show-border">
+{% if latest_places_list %}
+    {% for place in latest_places_list %}
+    <div class="col">
+        <div class="card m-3">
+            <img class="card-img-top" src="{% static place.mainImage.url %}" width = 100%% alt="Card image cap">
+            <div class="card-body">
+                <h3 class="card-title">{{ place.name }}</h3>
+                <div class='card-description'>
+                    <p class="card-text">{{ place.description }}</p>
+                </div>
+                <a href="{% url 'places:detail' place.id %}" class="btn btn-primary">Открыть</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% else %}
+    <p>No places are available.</p>
+{% endif %}
+ </div>
+ </div>
+ {% endblock %}
+{# Read the documentation for more information #}

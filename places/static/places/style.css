@@ -1,0 +1,23 @@
+body {
+    /*background: white url("images/background.gif") no-repeat;*/
+    background-size: 100%;
+    background-attachment:local;
+}
+
+.card{
+    background: wheat;
+    width: 20rem;
+}
+
+.card-description{
+    height: 10rem;
+    overflow-y: scroll;
+}
+
+.top-image{
+    content:url("images/top-image.gif");
+}
+
+.show-border{
+    border: 2px solid black;
+}
